@@ -1,0 +1,10 @@
+tela inicial/login ser uma tela só com overflow, e deslizar pro lado quando clicar na seta, tipo um slider.
+
+event.preventDefault() pra não recarregar a pagina
+
+pra limpar o formulario depois de validar e enviar, só usar um document.querySelector("classe").innerHTML("")
+
+texto da descrição da tarefa tem que ser um textarea e pesquisar como bloqueia pra não poder editar o tamanho
+
+como faz uma single page aplication pra não ficar recarregando toda vez?
+
