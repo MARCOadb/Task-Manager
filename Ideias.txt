@@ -8,3 +8,4 @@ texto da descrição da tarefa tem que ser um textarea e pesquisar como bloqueia
 
 como faz uma single page aplication pra não ficar recarregando toda vez?
 
+criar uma classe chamda usuario pra poder executar um new User
