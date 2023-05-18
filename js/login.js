@@ -7,39 +7,21 @@ var btnLogin = document.querySelector('.btn-login')
 var emailErrorMsg = document.querySelector('.email-error-msg')
 var passwordErrorMsg = document.querySelector('.password-error-msg')
 
-var users = [{
-    name: 'Marco',
-    email: 'marco@email.com',
-    password: 'Marco19',
-    occupation: 'student'
-}, {
-    name: 'Carlos',
-    email: 'carlos@email.com',
-    password: 'Carlos22',
-    occupation: 'doctor'
-}, {
-    name: 'Marcelo',
-    email: 'marcelo@email.com',
-    password: 'Marcelo64',
-    occupation: 'fire man'
-}]
-
-
 //confere informações de login
 btnLogin.addEventListener('click', () => {
 
-    testEmail()
+    const validEmail = testEmail()
 
-    if (usuarioEncontrado) {
-        usuario = testPassword()
+    if (validEmail) {
+        validPassword = testPassword()
     }
 
-
-    if (usuarioEncontrado && senhaCorreta) {
-        console.log('Olá ' + usuario + '!')
+    if (validEmail && validPassword) {
         window.location.href = "../pages/home.html"
     }
 })
+
+const users = JSON.parse(localStorage.getItem('localStorageUsers'))
 
 function testEmail() {
     //confere se email é válido
@@ -53,18 +35,19 @@ function testEmail() {
         email.value = ""
     }
     //confere se email está presente na lista de users
-    let = usuarioEncontrado = false;
+    var usuarioEncontrado = false;
     for (var i = 0; i < users.length; i++) {
         if (email.value === users[i].email) {
             console.log('Usuário Encontrado!')
             usuarioEncontrado = true
+            return usuarioEncontrado
             break
         }
-        const teste = users[i].name
     }
     if (!usuarioEncontrado) {
         console.log('Usuário não encontrado')
         showEmailError()
+        return usuarioEncontrado
     }
 }
 
@@ -80,18 +63,19 @@ function testPassword() {
     }
 
     //confere se a senha está correta
-    let = senhaCorreta = false;
+    let senhaCorreta = false;
     for (var i = 0; i < users.length; i++) {
         if (senha.value === users[i].password) {
             console.log('Senha Correta!!')
             senhaCorreta = true
-            return users[i].name
+            return senhaCorreta
         }
     }
     if (!senhaCorreta) {
         console.log('Senha incorreta')
         showPasswordError()
         senha.value = ""
+        return senhaCorreta
     }
 }
 
@@ -121,8 +105,8 @@ function showPasswordError() {
     }, 3000)
 }
 
-passwordType.addEventListener('click', () => {
-    event.preventDefault()
+passwordType.addEventListener('click', (e) => {
+    e.preventDefault()
     if (senha.type === 'password') {
         senha.type = 'text'
         hidePassword.classList.remove('hidden')
