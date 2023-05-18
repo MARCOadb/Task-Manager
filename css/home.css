@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+.page-wrapper {
+    width: 360px;
+    height: 640px;
+    position: relative;
+    background-color: #f6f2ff;
+    font-family: 'Poppins';
+}
+
+header {
+    width: 287px;
+    height: 44px;
+    position: relative;
+    top: 38px;
+    left: 36px;
+}
+
+.profile-picture {
+    width: 44px;
+    height: 44px;
+    border-radius: 22px;
+    border: 1px solid #6368d9;
+}
+
+header p {
+    width: 130px;
+    padding-top: 9px;
+    position: absolute;
+    top: 0;
+    left: 55px;
+}
+
+main {
+    margin-top: 87px;
+}
+
+.first-container {
+    width: 286px;
+    height: 173px;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.first-content {
+    width: 100%;
+    height: 149px;
+    position: absolute;
+    bottom: 0;
+    border-radius: 20px;
+    background-color: #6368d9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.first-content p {
+    width: auto;
+    height: 7px;
+    position: absolute;
+    left: 18px;
+    top: 24px;
+}
+
+.progress-bar {
+    width: 242px;
+    height: 8px;
+    border-radius: 4px;
+    border: 1px solid #D1D0F9;
+    position: absolute;
+    left: 18px;
+    top: 37px;
+}
+
+.first-content h6 {
+    width: 135px;
+    height: 30px;
+    position: absolute;
+    top: 60px;
+    left: 18px;
+}
+
+.first-content img {
+    position: absolute;
+    left: 180px;
+    top: 31px;
+    transform: matrix(0.96, -0.28, 0.23, 0.97, 0, 0);
+}
+
+.first-content a {
+    width: 80px;
+    height: 23px;
+    display: block;
+    background-color: #D1D0F9;
+    border-radius: 11.5px;
+    text-align: center;
+    text-decoration: none;
+    padding-top: 7px;
+    position: absolute;
+    left: 18px;
+    bottom: 17px;
+}
+
+.second-container {
+    width: 291px;
+    height: 253px;
+    position: relative;
+    top: 28px;
+    left: 35px;
+}
+
+.second-container .title-small {
+    height: 8px;
+    position: absolute;
+    top: -6px;
+}
+
+.secont-content {
+    width: 100%;
+    height: 220px;
+    position: absolute;
+    bottom: 13px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    align-content: space-between;
+    row-gap: 8px;
+}
+
+.second-box {
+    width: 137px;
+    height: 68px;
+    border-radius: 15px;
+    background-color: #D1D0F9;
+    position: relative;
+}
+
+.box-content {
+    width: 60px;
+    height: auto;
+    margin-left: 21px;
+}
+
+.box-content p {
+    margin-top: 8px;
+}
+
+.second-box img {
+    position: absolute;
+    right: 22px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
+footer {
+    width: 100%;
+    height: 42px;
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer img {
+    width: 24px;
+    height: 24px;
+}
+
+.circle-plus {
+    width: 48px;
+    height: 48px;
+    position: relative;
+    top: -22px;
+}
+
+
+/*UTILITARIAS*/
+
+.txt-small {
+    font-size: 10px;
+    line-height: 7px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.txt-small-2 {
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.txt-mid-small {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.txt-bold {
+    font-weight: 700;
+}
+
+.txt-medium {
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.txt-medium-2 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+}
+
+.title-small {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 12px;
+    letter-spacing: 0.02em;
+}
+
+.title-bigger {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 24px;
+}
+
+.txt-purple {
+    color: #6368d9
+}
+
+.txt-light {
+    color: #fff;
+}
+
+.txt-light-2 {
+    color: #f6f2ff;
+}
+
+.txt-grey {
+    color: #9C98A1;
+}
+
+.mar-top-12 {
+    margin-top: 12.86px;
+}
+
+.mar-top-20 {
+    margin-top: 20px;
+}
