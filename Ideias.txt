@@ -9,3 +9,7 @@ texto da descrição da tarefa tem que ser um textarea e pesquisar como bloqueia
 como faz uma single page aplication pra não ficar recarregando toda vez?
 
 criar uma classe chamda usuario pra poder executar um new User
+
+no signup, vc arrumou o negócio de querer zerar quando nao tem nada. ele também ta setando o localStorageUsers(pc)
+isActive de todos pra false, mas o localStorageUsers(web) ainda não. tem que setar o isActive = true
+no user cujo email bateu no loop

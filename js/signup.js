@@ -1,17 +1,18 @@
-var profileImg = document.querySelector('.profile-picture-img')
-var profileInput = document.querySelector('.profile-picture-input')
-var btnSave = document.querySelector('.btn-save')
-var nome = document.querySelector('.field-name')
-var occupation = document.querySelector('.field-occupation')
-var email = document.querySelector('.field-email')
-var password = document.querySelector('.field-password')
-var passwordType = document.querySelector('.show-password')
-var showPassword = document.querySelector('.show')
-var hidePassword = document.querySelector('.hide')
-var emailErrorMsg = document.querySelector('.email-error-msg')
-var emailErrorMsg2 = document.querySelector('.email-error-msg-2')
-var passwordErrorMsg = document.querySelector('.password-error-msg')
-var successMsg = document.querySelector('.success')
+const profileImg = document.querySelector('.profile-picture-img')
+const profileInput = document.querySelector('.profile-picture-input')
+const btnSave = document.querySelector('.btn-save')
+const nome = document.querySelector('.field-name')
+const occupation = document.querySelector('.field-occupation')
+const email = document.querySelector('.field-email')
+const password = document.querySelector('.field-password')
+const passwordType = document.querySelector('.show-password')
+const showPassword = document.querySelector('.show')
+const hidePassword = document.querySelector('.hide')
+const emailErrorMsg = document.querySelector('.email-error-msg')
+const emailErrorMsg2 = document.querySelector('.email-error-msg-2')
+const passwordErrorMsg = document.querySelector('.password-error-msg')
+const fieldErrorMsg = document.querySelector('.field-error-msg')
+const successMsg = document.querySelector('.success')
 
 //Define Foto de perfil
 profileInput.addEventListener('change', (e) => {
@@ -29,48 +30,61 @@ profileInput.addEventListener('change', (e) => {
 
 //Criação da classe user
 class User {
-    constructor(name, occupation, email, password, picture) {
+    constructor(name, isActive, occupation, email, password, picture) {
         this.name = name;
+        this.isActive = isActive
         this.occupation = occupation;
         this.email = email;
         this.password = password;
         this.picture = picture;
     }
 }
-
-var users = []
+//Carrega informações do localStorage
+const localStorageUsersPC = JSON.parse(localStorage.getItem('localStorageUsers'))
+if (localStorageUsersPC !== null) {
+    for (let i = 0; i < localStorageUsersPC.length; i++) {
+        localStorageUsersPC[i].isActive = false
+    }
+}
+var users = localStorage.getItem('localStorageUsers') !== null ? localStorageUsersPC : []
 
 //Botao Save
 btnSave.addEventListener('click', () => {
-
-    //Confere se email é usável
-    const errorEmail = testEmail()
-
-    if (errorEmail) {
-        console.log('vish')
-        email.value = ''
-        return
+    //TODOS OS CAMPOS SAO OBRIGATÓRIOS
+    if (!nome.value || !occupation.value || !email.value || !password.value) {
+        fieldError()
     } else {
-        //Confere se senha é usável
-        let senhaValida = validarSenha(password.value)
+        //Confere se email é usável
+        const errorEmail = testEmail()
 
-        if (senhaValida) {
-            //Cria user no localStorage
-            var user = new User(
-                nome.value,
-                occupation.value,
-                email.value,
-                password.value,
-                profileImg.src
-            )
-            users.push(user)
-            localStorage.localStorageUsers = JSON.stringify(users)
-            success()
+        if (errorEmail) {
+            console.log('vish')
+            email.value = ''
+            return
         } else {
-            showPasswordError()
-            password.value = ""
+            //Confere se senha é usável
+            let senhaValida = validarSenha(password.value)
+
+            if (senhaValida) {
+                //Cria user no localStorage
+                var user = new User(
+                    nome.value,
+                    true,
+                    occupation.value,
+                    email.value,
+                    password.value,
+                    profileImg.src
+                )
+                users.push(user)
+                localStorage.localStorageUsers = JSON.stringify(users)
+                success()
+            } else {
+                showPasswordError()
+                password.value = ""
+            }
         }
     }
+
 })
 
 function testEmail() {
@@ -142,6 +156,14 @@ function success() {
     setTimeout(function () {
         successMsg.classList.add('hidden')
         window.location.href = "../pages/home.html"
+    }, 4000)
+}
+
+function fieldError() {
+    fieldErrorMsg.classList.remove('hidden')
+    fieldErrorMsg.classList.add('animate__shakeX')
+    setTimeout(function () {
+        fieldErrorMsg.classList.add('hidden')
     }, 4000)
 }
 

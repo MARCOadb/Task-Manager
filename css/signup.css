@@ -221,6 +221,21 @@
     z-index: 3;
 }
 
+.field-error-msg {
+    width: 300px;
+    height: 75px;
+    border-radius: 25px;
+    padding: 12px;
+    text-align: center;
+    background-color: #ff7676;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+}
+
 .fade-out {
     animation: fadeOut 2s forwards ease-out;
 }

@@ -5,6 +5,11 @@ página que não seja o signuo ou login, vai perguntar
 se (isLoggedIn === true) se sim, continua tudo certo,
 se não, ele redireciona pro login com
 window.location.href = '' */
+
+const localStorageUsers = JSON.parse(localStorage.getItem('localStorageUsers'))
+var users = localStorage.getItem('localStorageUsers') !== null ? localStorageUsers : []
+
+
 function goToTasks() {
     window.location.href = "../pages/tasks.html"
 }

@@ -130,7 +130,7 @@
     position: relative;
 }
 
-#email-form h6 {
+.email-error-msg {
     width: 120px;
     height: 20px;
     padding-top: 2px;
@@ -152,6 +152,19 @@
     border-radius: 11px;
     position: absolute;
     top: 0px;
+    right: 40px;
+    z-index: 3;
+}
+
+.email-error-msg-2 {
+    width: 140px;
+    height: 20px;
+    padding-top: 2px;
+    text-align: center;
+    background-color: #ff7676;
+    border-radius: 10px;
+    position: absolute;
+    top: 4px;
     right: 40px;
     z-index: 3;
 }

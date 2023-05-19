@@ -6,6 +6,11 @@ var hidePassword = document.querySelector('.hide')
 var btnLogin = document.querySelector('.btn-login')
 var emailErrorMsg = document.querySelector('.email-error-msg')
 var passwordErrorMsg = document.querySelector('.password-error-msg')
+var emailErrorMsg2 = document.querySelector('.email-error-msg-2')
+
+//Carrega informações do localStorage
+const localStorageUsersPC = JSON.parse(localStorage.getItem('localStorageUsers'))
+var users = localStorage.getItem('localStorageUsers') !== null ? localStorageUsersPC : []
 
 //confere informações de login
 btnLogin.addEventListener('click', () => {
@@ -17,11 +22,24 @@ btnLogin.addEventListener('click', () => {
     }
 
     if (validEmail && validPassword) {
+        console.log('entrou no valid')
+        for (let i = 0; i < users.length; i++) {
+            console.log('entrou no loop')
+            if (users[i].email === email.value) {
+                users[i].isActive = true
+                console.log('BINGOOOO')
+            } else {
+                users[i].isActive = false
+            }
+        }
+        updateLocalStorage()
         window.location.href = "../pages/home.html"
     }
 })
 
-const users = JSON.parse(localStorage.getItem('localStorageUsers'))
+const updateLocalStorage = () => {
+    localStorage.localStorageUsers = JSON.stringify(users)
+}
 
 function testEmail() {
     //confere se email é válido
@@ -44,9 +62,9 @@ function testEmail() {
             break
         }
     }
-    if (!usuarioEncontrado) {
+    if (!usuarioEncontrado && emailValido) {
         console.log('Usuário não encontrado')
-        showEmailError()
+        showEmailError2()
         return usuarioEncontrado
     }
 }
@@ -94,6 +112,14 @@ function showEmailError() {
     emailErrorMsg.classList.add('animate__shakeX')
     setTimeout(function () {
         emailErrorMsg.classList.add('hidden')
+    }, 3000)
+}
+
+function showEmailError2() {
+    emailErrorMsg2.classList.remove('hidden')
+    emailErrorMsg2.classList.add('animate__shakeX')
+    setTimeout(function () {
+        emailErrorMsg2.classList.add('hidden')
     }, 3000)
 }
 

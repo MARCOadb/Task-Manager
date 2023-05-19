@@ -16,15 +16,92 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/create.css">
 
-    <title>Home</title>
+    <title>Create</title>
 </head>
 
 <body>
     <div class="page-wrapper">
-        <h1>Create</h1>
+        <header>
+            <img onclick="goToHome()" src="../assets/icons/Arrow-back.svg">
+            <p class="txt-purple txt-medium">Create task</p>
+        </header>
+
+        <div class="authentication-error-msg txt-mid-small txt-light hidden animate__animated">
+            <p>Você não está autenticado!</p>
+        </div>
+
+        <main>
+            <form>
+                <div id="title-form">
+                    <p class="txt-mid-small txt-purple">Title</p>
+                    <input class="form-field field-title txt-medium-2 txt-purple" type="text" name="Title">
+                </div>
+                <div id="date-form">
+                    <p class="txt-mid-small txt-purple">Date</p>
+                    <input class="form-field field-date txt-medium-2 txt-purple" type="date" id="img-calendar"
+                        name="Date" min=''>
+                    <img>
+                </div>
+                <div id="time-form">
+                    <div class="start">
+                        <p class="txt-mid-small txt-purple">Start time</p>
+                        <input class="form-field field-start txt-medium-2 txt-purple" type="time" id="img-clock-1"
+                            name="Start" min=''>
+                        <img>
+                    </div>
+                    <div class="end">
+                        <p class="txt-mid-small txt-purple">End time</p>
+                        <input class="form-field field-end txt-medium-2 txt-purple" type="time" id="img-clock-2"
+                            name="End">
+                        <img>
+                    </div>
+                </div>
+                <div id="category-form">
+                    <p class="txt-mid-small txt-purple mar-top-13">Category</p>
+                    <div class="field-categories">
+                        <div class="categories-1 txt-purple title-small">
+                            <p class="cat-college" onclick="catCollege()">College stuff</p>
+                            <p class="cat-work" onclick="catWork()">Work</p>
+                            <p class="cat-social" onclick="catSocial()">Social life</p>
+                        </div>
+                        <div class="categories-2 txt-purple title-small">
+                            <p class="cat-study" onclick="catStudy()">Study</p>
+                            <p class="cat-personal" onclick="catPersonal()">Personal project</p>
+                            <p class="cat-home" onclick="catHome()">Home</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="description-form">
+                    <p class="txt-mid-small txt-purple">Description</p>
+                    <input class="form-field field-description form-field-big txt-medium-2 txt-purple" type="text"
+                        name="Description">
+                </div>
+            </form>
+            <div class="field-error-msg txt-mid-small txt-light hidden animate__animated">
+                <p>Todos os campos devem ser preenchidos!</p>
+            </div>
+            <div class="date-error-msg txt-mid-small txt-light hidden animate__animated">
+                <p>Data inválida</p>
+            </div>
+            <div class="time-error-msg txt-mid-small txt-light hidden animate__animated">
+                <p>Hora inválida</p>
+            </div>
+            <div class="success txt-mid-small txt-light hidden animate__animated">
+                <p>Tarefa adicionada com sucesso!</p>
+            </div>
+        </main>
+        <footer>
+            <button onclick="deleteTask()" class="clear-form">
+                <img src="../assets/icons/trash.svg">
+            </button>
+            <button onclick="saveTask()" class="save-form txt-light txt-small-2">Save task</button>
+        </footer>
     </div>
+
+    <script src="../js/isLogged.js"></script>
+    <script src="../js/create.js"></script>
 </body>
 
 </html>

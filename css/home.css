@@ -188,6 +188,25 @@ footer img {
     top: -22px;
 }
 
+.authentication-error-msg {
+    width: 150px;
+    height: 40px;
+    padding-top: 4px;
+    text-align: center;
+    background-color: #ff7676;
+    border-radius: 10px;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0px;
+    z-index: 3;
+    margin: 0 auto;
+}
+
+.hidden {
+    display: none;
+}
+
 
 /*UTILITARIAS*/
 
