@@ -18,7 +18,12 @@ for (let i = 0; i < tasks.length; i++) {
                 var endTimeText = tasks[i].task.end.split(':')
                 var currentTimeText = currentTime.split(':')
                 if (tasks[i].task.state === 'in progress') {
-                    if (startTimeText[0] === currentTimeText[0]) {
+                    if (startTimeText[1] > currentTimeText[1]) {
+                        var difMin = startTimeText[1] - currentTimeText[1]
+                    } else if (startTimeText[1] < currentTimeText[1]) {
+                        var difMin = currentTimeText[1] - startTimeText[1]
+                    }
+                    if (startTimeText[0] === currentTimeText[0] || difMin > 60) {
                         var timeDif = parseInt(currentTimeText[1]) - parseInt(startTimeText[1])
                         var timeDifText = timeDif + ' min ago'
                     } else {
@@ -47,15 +52,12 @@ for (let i = 0; i < tasks.length; i++) {
             }
 
         } else if (tasks[i].task.date === changeDate(currentDate)) {
-            console.log('passou1')
             title = tasks[i].task.title
             if (tasks[i].task.start <= currentTime) {
-                console.log('passou2')
                 var startTimeText = tasks[i].task.start.split(':')
                 var endTimeText = tasks[i].task.end.split(':')
                 var currentTimeText = currentTime.split(':')
                 if (tasks[i].task.state === 'in progress') {
-                    console.log('passou3')
                     if (startTimeText[0] === currentTimeText[0]) {
                         var timeDif = parseInt(currentTimeText[1]) - parseInt(startTimeText[1])
                         var timeDifText = timeDif + ' min ago'
@@ -70,7 +72,6 @@ for (let i = 0; i < tasks.length; i++) {
 
                 }
                 if (tasks[i].task.state === 'completed') {
-                    console.log('passou4')
                     if (endTimeText[0] === currentTimeText[0]) {
                         var timeDif = parseInt(currentTimeText[1]) - parseInt(endTimeText[1])
                         var timeDifText = timeDif + ' min ago'

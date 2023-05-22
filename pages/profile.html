@@ -16,15 +16,65 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/profile.css">
 
-    <title>Home</title>
+    <title>Profile</title>
 </head>
 
 <body>
     <div class="page-wrapper">
-        <h1>Profile</h1>
+        <header>
+            <p class="txt-purple txt-medium">Profile</p>
+        </header>
+
+        <div class="authentication-error-msg txt-mid-small txt-light hidden animate__animated">
+            <p>Você não está autenticado!</p>
+        </div>
+
+        <main>
+            <div class="profile-info">
+                <img src="">
+                <div class="profile-content txt-purple">
+                    <p class="info-name txt-medium"></p>
+                    <p class="info-occupation txt-small"></p>
+                    <a class="txt-purple txt-smaller" href="../pages/edit.html">Edit profile</a>
+                </div>
+            </div>
+            <div class="box-completed txt-light">
+                <p class="txt-smaller txt-bold text-amazing">Amazing!</p>
+                <p class="tasks-number txt-medium txt-bold"></p>
+                <img src="../assets/images/Diary.svg">
+                <a class="txt-purple txt-smaller" href="../pages/tasks.html">Details</a>
+            </div>
+            <div class="options txt-purple txt-small">
+                <div class="options-box">
+                    <img src="../assets/icons/User.svg">
+                    <p>Account Informations</p>
+                </div>
+                <div class="options-box">
+                    <img src="../assets/icons/Settings.svg">
+                    <p>Settings</p>
+                </div>
+                <div class="options-box" onclick="logOut()">
+                    <img src="../assets/icons/Logout.svg">
+                    <p>Log out</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <img onclick="goToHome()" src="../assets/icons/Footer/Home.svg">
+            <img onclick="goToTasks()" src="../assets/icons/Footer/Calendar.svg">
+            <img onclick="goToCreate()" class="circle-plus" src="../assets/icons/Footer/Circle.svg">
+            <img onclick="goToNotifications()" src="../assets/icons/Footer/Bell.svg">
+            <img src="../assets/icons/Footer/Profile-active.svg">
+        </footer>
     </div>
+
+    <script src="../js/libs/anime.min.js"></script>
+    <script src="../js/isLogged.js"></script>
+    <script src="../js/setTaskState.js"></script>
+    <script src="../js/profile.js"></script>
 </body>
 
 </html>

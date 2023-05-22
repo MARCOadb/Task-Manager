@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+.page-wrapper {
+    width: 360px;
+    height: 640px;
+    position: relative;
+    background-color: #f6f2ff;
+    font-family: 'Poppins';
+}
+
+.welcome {
+    width: 100%;
+    height: 115px;
+}
+
+.welcome img {
+    position: absolute;
+    right: 70px;
+    top: 20px;
+}
+
+.txt-welcome {
+    width: 200px;
+    height: 39px;
+    text-align: center;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+.container {
+    width: 301px;
+    height: auto;
+    display: table;
+    position: relative;
+    top: 180px;
+    left: 30px;
+}
+
+.profile-picture-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    position: absolute;
+    top: -130px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    pointer-events: none;
+}
+
+.profile-picture-input {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    position: absolute;
+    display: block;
+    top: -130px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+}
+
+.form-container {
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+
+.form-container i {
+    color: #6368d9;
+    font-size: 18px;
+    position: absolute;
+    bottom: 30px;
+    right: 33px;
+}
+
+.hidden {
+    display: none;
+}
+
+.form-container button {
+    border-style: none;
+}
+
+.form-field {
+    width: 261px;
+    height: 36px;
+    border-radius: 30px;
+    background-color: #d1d0f9;
+    border-style: none;
+    padding-left: 19px;
+    margin: 0 20px;
+}
+
+.form-field::placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #6368d9;
+    letter-spacing: 0.02em;
+}
+
+.field-name {
+    margin-top: 20px;
+}
+
+.field-occupation {
+    margin-top: 10px;
+}
+
+.field-email {
+    margin-top: 10px;
+}
+
+.field-password {
+    margin-top: 10px;
+}
+
+.btn-save {
+    width: 261px;
+    height: 36px;
+    border-radius: 30px;
+    background-color: #6368d9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-style: none;
+    margin: 0 20px;
+    text-align: center;
+    position: absolute;
+    bottom: -24px;
+    left: 0;
+}
+
+.text-account {
+    width: 272px;
+    height: 11px;
+    margin: 0 auto;
+    text-align: center;
+    position: absolute;
+    bottom: -52px;
+    left: 0;
+    right: 0;
+}
+
+.container p a {
+    text-decoration: none;
+}
+
+#email-form {
+    position: relative;
+}
+
+#password-form {
+    position: relative;
+}
+
+#password-form h6 {
+    width: 180px;
+    height: auto;
+    padding-top: 2px;
+    text-align: center;
+    background-color: #ff7676;
+    border-radius: 11px;
+    position: absolute;
+    bottom: 50px;
+    right: 20px;
+    z-index: 3;
+}
+
+.success {
+    width: 300px;
+    height: 50px;
+    border-radius: 25px;
+    padding: 12px;
+    text-align: center;
+    background-color: #4bc055;
+    margin: 0 auto;
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    right: 0;
+    z-index: 3;
+}
+
+.field-error-msg {
+    width: 300px;
+    height: 75px;
+    border-radius: 25px;
+    padding: 12px;
+    text-align: center;
+    background-color: #ff7676;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+}
+
+.fade-out {
+    animation: fadeOut 2s forwards ease-out;
+}
+
+
+/*UTILITARIAS*/
+
+.txt-small {
+    font-size: 11px;
+    line-height: 16.5px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+.txt-mid-small {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+.txt-medium {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.txt-medium-2 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+}
+
+.title-bigger {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 24px;
+}
+
+.txt-purple {
+    color: #6368d9
+}
+
+.txt-light {
+    color: #fff;
+}
+
+.txt-grey {
+    color: #9C98A1;
+}
