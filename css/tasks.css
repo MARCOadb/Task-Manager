@@ -13,7 +13,7 @@
 }
 
 .page-wrapper {
-    width: 100%;
+    width: 360px;
     height: 100vh;
     min-height: 640px;
     display: table;
@@ -185,19 +185,8 @@ header>p {
     text-transform: capitalize;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 footer {
-    width: 100%;
+    width: 360px;
     background-color: #f6f2ff;
     height: 52px;
     position: fixed;

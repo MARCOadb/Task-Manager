@@ -16,15 +16,51 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/notifications.css">
 
-    <title>Home</title>
+    <title>Notifications</title>
 </head>
 
 <body>
     <div class="page-wrapper">
-        <h1>Notifications</h1>
+        <header>
+            <p class="txt-purple txt-medium">Notifications</p>
+        </header>
+
+        <div class="authentication-error-msg txt-mid-small txt-light hidden animate__animated">
+            <p>Você não está autenticado!</p>
+        </div>
+
+        <main>
+            <div class="main-content">
+                <div class="todays-tasks day-tasks">
+                    <p class="txt-purple txt-mid-small day-text">Today</p>
+                    <div class="day-tasks-content"></div>
+
+                </div>
+
+                <div class="yesterday-tasks day-tasks">
+                    <p class="txt-purple txt-mid-small day-text">Yesterday</p>
+                    <div class="yesterday-tasks-content"></div>
+                </div>
+            </div>
     </div>
+    </div>
+    </main>
+
+    <footer>
+        <img onclick="goToHome()" src="../assets/icons/Footer/Home.svg">
+        <img onclick="goToTasks()" src="../assets/icons/Footer/Calendar.svg">
+        <img onclick="goToCreate()" class="circle-plus" src="../assets/icons/Footer/Circle.svg">
+        <img src="../assets/icons/Footer/Bell-active.svg">
+        <img onclick="goToProfile()" src="../assets/icons/Footer/Profile.svg">
+    </footer>
+    </div>
+
+    <script src="../js/libs/anime.min.js"></script>
+    <script src="../js/isLogged.js"></script>
+    <script src="../js/setTaskState.js"></script>
+    <script src="../js/notifications.js"></script>
 </body>
 
 </html>
