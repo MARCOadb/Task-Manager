@@ -66,6 +66,8 @@ form {
 
 .form-field-big {
     height: 107px;
+
+    padding-right: 10px;
     margin-top: 6px;
 }
 

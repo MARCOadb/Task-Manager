@@ -85,6 +85,14 @@ main {
     top: 37px;
 }
 
+.progress-bar div {
+    height: 100%;
+    border-radius: 4px;
+    position: relative;
+    transform: scaleX(1.009);
+    background-color: #D1D0F9;
+}
+
 .first-content h6 {
     width: 135px;
     height: 30px;

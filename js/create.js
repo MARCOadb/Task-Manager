@@ -24,7 +24,7 @@ var users = localStorage.getItem('localStorageUsers') !== null ? localStorageUse
 
 for (let i = 0; i < localStorageUsersPC.length; i++) {
     if (localStorageUsersPC[i].isActive === true) {
-        activeUser = localStorageUsersPC[i].email
+        activeUser = localStorageUsersPC[i]
     }
 }
 
@@ -109,9 +109,10 @@ function catHome() {
 }
 
 class Task {
-    constructor(title, date, start, end, category, description) {
+    constructor(title, date, state, start, end, category, description) {
         this.title = title;
         this.date = date;
+        this.state = state
         this.start = start;
         this.end = end;
         this.category = category;
@@ -140,6 +141,9 @@ function getDateTime() {
     if (hour < 10) {
         hour = '0' + hour
     }
+    if (minutes < 10) {
+        minutes = '0' + minutes
+    }
     var minTime = `${hour}:${minutes}`
     date.min = minDate
     start.min = minTime
@@ -158,13 +162,14 @@ function saveTask() {
             var taskDetails = new Task(
                 title.value,
                 date.value,
+                'to do',
                 start.value,
                 end.value,
                 category
             )
 
             var task = new UserTask(
-                activeUser,
+                activeUser.email,
                 taskDetails
             )
 
@@ -199,6 +204,8 @@ function testTime() {
     } else {
         if (date.value === date.min) {
             if (start.value <= start.min) {
+                console.log(start.value)
+                console.log(start.min)
                 timeError()
             } else {
                 if (end.value > start.value) {
@@ -249,5 +256,6 @@ function success() {
     successMsg.classList.add('animate__bounceIn')
     setTimeout(function () {
         successMsg.classList.add('hidden')
+        window.location.href = "../pages/home.html"
     }, 4000)
 }

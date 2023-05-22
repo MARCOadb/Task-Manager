@@ -1,0 +1,293 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+.page-wrapper {
+    width: 100%;
+    height: 100vh;
+    min-height: 640px;
+    display: table;
+    position: relative;
+    background-color: #f6f2ff;
+    font-family: 'Poppins';
+    overflow: hidden;
+}
+
+header {
+    width: 100%;
+    height: 144px;
+    position: relative;
+}
+
+header>p {
+    position: absolute;
+    top: 60px;
+    left: 37px;
+    margin-bottom: 21px;
+}
+
+.container {
+    position: absolute;
+    bottom: 0;
+    padding-left: 37px;
+    /* transition: transform 0.5s ease-in-out; */
+    /* transform: translateX(0); */
+    width: auto;
+    height: 53px;
+    gap: 5px;
+    /* parte relevante ao carrossel */
+    display: flex;
+    /* define o diesplay como flex para que seja possível utilizar as outras tags */
+    flex-wrap: nowrap;
+    /* evita a "quebra de linha", fazendo com que todos os elementos filhos permaneçam na mesma linha */
+    overflow-x: scroll;
+    /* define que um scroll seja criado caso os elementos sejam maiores que espaço horizontal disponível neste elemento */
+    /* ---------------------------- */
+}
+
+/* recursos para estilizar o scroll */
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+.container::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    /* cor de fundo da trilha */
+    border-radius: 5px;
+    /* borda arredondada da trilha */
+}
+
+.container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    /* cor de fundo do polegar */
+    border-radius: 5px;
+    /* borda arredondada do polegar */
+}
+
+/* -------------------------------- */
+
+.card {
+    background-color: #D1D0F9;
+    border-radius: 10px;
+    object-fit: cover;
+    width: 45px;
+    height: 100%;
+    display: flex;
+    position: relative;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-content {
+    text-align: center;
+    height: 30px;
+}
+
+.card-content .txt-mid-small {
+    line-height: 10px;
+    padding-bottom: 9px;
+}
+
+.card-content .txt-medium {
+    line-height: 11px;
+}
+
+.slide-active {
+    background-color: #6368d9;
+}
+
+.tabs {
+    width: 100%;
+    height: 72px;
+    display: flex;
+    /* background-color: red; */
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    text-align: center;
+    transition: all 0.2s ease-out;
+}
+
+.tabs-tab {
+    height: 22px;
+    background-color: #D1D0F9;
+    border-radius: 30px;
+    padding-bottom: 10px;
+}
+
+.tabs-active {
+    background-color: #6368d9;
+    color: #fff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#tab-to-do {
+    width: 80px;
+}
+
+#tab-progress,
+#tab-completed {
+    width: 100px;
+}
+
+.day-tasks {
+    width: 286px;
+    height: auto;
+    margin: 0 auto 52px auto;
+    /* background-color: blue; */
+    display: table;
+    flex-direction: column;
+}
+
+.task-box {
+    width: 100%;
+    height: 77px;
+    background-color: #D1D0F9;
+    position: relative;
+    border-radius: 15px;
+    padding: 12px 18px;
+    margin-bottom: 8px;
+}
+
+.task-box h6 {
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 700;
+    padding-top: 6px;
+    letter-spacing: 0.02em;
+}
+
+.task-box img {
+    position: absolute;
+    bottom: 13px;
+    left: 22px;
+}
+
+.text-time {
+    position: absolute;
+    bottom: 16px;
+    left: 42px;
+    line-height: 8px;
+}
+
+.text-category {
+    text-transform: capitalize;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    width: 100%;
+    background-color: #f6f2ff;
+    height: 52px;
+    position: fixed;
+    padding-top: 10px;
+    bottom: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer img {
+    width: 24px;
+    height: 24px;
+}
+
+.circle-plus {
+    width: 48px;
+    height: 48px;
+    position: relative;
+    top: -22px;
+}
+
+.authentication-error-msg {
+    width: 150px;
+    height: 40px;
+    padding-top: 4px;
+    text-align: center;
+    background-color: #ff7676;
+    border-radius: 10px;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0px;
+    z-index: 3;
+    margin: 0 auto;
+}
+
+.hidden {
+    display: none;
+}
+
+/*UTILITARIAS*/
+
+.txt-small {
+    font-size: 12px;
+    line-height: 22px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.txt-small-2 {
+    font-size: 12px;
+    line-height: 8px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.txt-small-italic {
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 0.02em;
+}
+
+.txt-mid-small {
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.txt-medium {
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.txt-bold {
+    font-weight: 700;
+}
+
+.txt-purple {
+    color: #6368d9
+}
+
+.txt-light {
+    color: #fff;
+}
+
+.txt-light-2 {
+    color: #f6f2ff
+}

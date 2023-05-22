@@ -22,12 +22,9 @@ btnLogin.addEventListener('click', () => {
     }
 
     if (validEmail && validPassword) {
-        console.log('entrou no valid')
         for (let i = 0; i < users.length; i++) {
-            console.log('entrou no loop')
             if (users[i].email === email.value) {
                 users[i].isActive = true
-                console.log('BINGOOOO')
             } else {
                 users[i].isActive = false
             }

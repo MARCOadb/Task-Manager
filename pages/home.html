@@ -25,7 +25,7 @@
     <div class="page-wrapper">
         <header>
             <img class="profile-picture" src="../assets/images/profile_picture.png" alt="Foto de perfil">
-            <p class="txt-purple txt-mid-small">Hello,<br> <span class="txt-bold">Shafa Salsabilla!</span></p>
+            <p class="txt-purple txt-mid-small">Hello,<br> <span class="txt-bold" id="user-name"></span></p>
         </header>
 
         <div class="authentication-error-msg txt-mid-small txt-light hidden animate__animated">
@@ -36,9 +36,11 @@
             <div class="first-container">
                 <p class="txt-purple title-small">Let's check out your today's task</p>
                 <div class="first-content">
-                    <p class="txt-light-2 txt-small txt-bold">62.5% completed</p>
-                    <div class="progress-bar"></div>
-                    <h6 class="txt-light-2 txt-medium">You have 3 more task to do!</h6>
+                    <p class="txt-light-2 txt-small txt-bold"></p>
+                    <div class="progress-bar">
+                        <div></div>
+                    </div>
+                    <h6 class="txt-light-2 txt-medium"></h6>
                     <a class="txt-purple txt-small" href="">Details</a>
                     <img src="../assets/images/Diary.svg" alt="Book">
                 </div>
@@ -49,42 +51,42 @@
                     <div class="second-box">
                         <div class="box-content mar-top-12">
                             <h4 class="txt-bold txt-small-2">College stuff</h4>
-                            <p class="txt-small-2">27 tasks</p>
+                            <p class="txt-small-2" id="college-tasks"></p>
                         </div>
                         <img src="../assets/icons/University.svg">
                     </div>
                     <div class="second-box">
                         <div class="box-content">
                             <h4 class="txt-bold txt-small-2 mar-top-20">Work</h4>
-                            <p class="txt-small-2">11 tasks</p>
+                            <p class="txt-small-2" id="work-tasks"></p>
                         </div>
                         <img src="../assets/icons/Bag.svg">
                     </div>
                     <div class="second-box">
                         <div class="box-content">
                             <h4 class="txt-bold txt-small-2 mar-top-20">Study</h4>
-                            <p class="txt-small-2">18 tasks</p>
+                            <p class="txt-small-2" id="study-tasks"></p>
                         </div>
                         <img src="../assets/icons/Diary.svg">
                     </div>
                     <div class="second-box">
                         <div class="box-content">
                             <h4 class="txt-bold txt-small-2 mar-top-12">Personal project</h4>
-                            <p class="txt-small-2">4 tasks</p>
+                            <p class="txt-small-2" id="personal-tasks"></p>
                         </div>
                         <img src="../assets/icons/Folder.svg">
                     </div>
                     <div class="second-box">
                         <div class="box-content">
                             <h4 class="txt-bold txt-small-2 mar-top-12">Social life</h4>
-                            <p class="txt-small-2">10 tasks</p>
+                            <p class="txt-small-2" id="social-tasks"></p>
                         </div>
                         <img src="../assets/icons/Chat.svg">
                     </div>
                     <div class="second-box">
                         <div class="box-content">
                             <h4 class="txt-bold txt-small-2 mar-top-20">Home</h4>
-                            <p class="txt-small-2">36 tasks</p>
+                            <p class="txt-small-2" id="home-tasks"></p>
                         </div>
                         <img src="../assets/icons/Home.svg">
                     </div>
@@ -102,6 +104,7 @@
     </div>
 
     <script src="../js/isLogged.js"></script>
+    <script src="../js/setTaskState.js"></script>
     <script src="../js/home.js"></script>
 </body>
 

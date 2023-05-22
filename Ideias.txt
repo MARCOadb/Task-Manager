@@ -13,3 +13,50 @@ criar uma classe chamda usuario pra poder executar um new User
 no signup, vc arrumou o negócio de querer zerar quando nao tem nada. ele também ta setando o localStorageUsers(pc)
 isActive de todos pra false, mas o localStorageUsers(web) ainda não. tem que setar o isActive = true
 no user cujo email bateu no loop
+
+no login e signup criar variáveis
+que virem TRUE quando der sucesso
+(isLoggedIn) ou algo assim. Quando entrar em qualquer
+página que não seja o signuo ou login, vai perguntar
+se (isLoggedIn === true) se sim, continua tudo certo,
+se não, ele redireciona pro login com
+window.location.href = '...' 
+
+fazer var lastVisitedPage, pra qunado (na aba criar tasks) clicar no voltar, voltar pra página que estava
+
+botao details (home) onclick = goToTasks + tasksToDo() => essa função vai ser a mesma que está no onclick
+do botao "to do" da página today's task
+
+Já está exibindo as tasks do dia, e dependendo de qual for o valor do activeTab. 
+Só não tá mudando o valor do activeTab nos clicks do mouse
+
+ao invés de 100% usar 100vh
+
+
+//Slider
+// function changeSlide() {
+//     // numero de slides a mudar = currentSlide - clickedSlide
+// }
+
+// function nextSlide() {
+//     // positionX++
+//     // if (positionX > 5) {
+//     //     positionX = 0
+//     // }
+
+//     slider.style.transform = `translateX(-50px)`
+// }
+
+// function prevSlide() {
+
+//     //     slider.style.transform = `translateX(${slides a mudar * 50
+//     // }px)`
+// }
+
+// setInterval(nextSlide, 800)
+
+//tem que conferir em qual slide tá. se o slide for maior(?) que o clicado, ele tem que voltar 50*(numero de slides de diferença) pra trás
+
+se não tiver tasks to do ou in progress, mostrar isso
+
+colocar os dias certos no innerHTML dos slides do slider <-- só falta isso e daí essa parte tá pronta!
