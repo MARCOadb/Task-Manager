@@ -1,2 +1,2 @@
 # Desafio-Compass-2
-Segundo desafio PB Compass - week 8
+Segundo desafio PB Compass - Task Manager
