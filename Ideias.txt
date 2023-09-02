@@ -60,3 +60,6 @@ ao invés de 100% usar 100vh
 se não tiver tasks to do ou in progress, mostrar isso
 
 colocar os dias certos no innerHTML dos slides do slider <-- só falta isso e daí essa parte tá pronta!
+
+nas funções de atualizar informações das tasks ou de usuários, principalmente nas que dizem respeito a horário,
+colocar um loop de 3 em 3 minutos, e as funções rodando pra sempre
